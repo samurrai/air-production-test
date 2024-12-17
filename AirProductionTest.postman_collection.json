@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "cc555e58-786d-4b5e-b145-a0d13718f260",
+		"name": "AirProductionTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14399153"
+	},
+	"item": [
+		{
+			"name": "Товары",
+			"item": [
+				{
+					"name": "Получить все",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/product"
+					},
+					"response": []
+				},
+				{
+					"name": "Получить по id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Создать",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Молоко\",\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product"
+					},
+					"response": []
+				},
+				{
+					"name": "Редактировать",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Яблоко Апорт\",\r\n    \"price\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/product/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Заказы",
+			"item": [
+				{
+					"name": "Получить все",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/order"
+					},
+					"response": []
+				},
+				{
+					"name": "Получить по id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/order/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Создать",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"product_id\": 1,\r\n            \"product_count\": 5\r\n        },\r\n        {\r\n            \"product_id\": 2,\r\n            \"product_count\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/order"
+					},
+					"response": []
+				},
+				{
+					"name": "Возврат заказа (смена статуса)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/order/1/return"
+					},
+					"response": []
+				},
+				{
+					"name": "Оплата заказа (смена статуса)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/order/1/pay"
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/order/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
